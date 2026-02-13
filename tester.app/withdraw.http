@@ -1,0 +1,69 @@
+```http
+@base = http://localhost:8080
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzEwNTYzNjQsImlhdCI6MTc3MDk2OTk2NCwidXNlcl9pZCI6ImFkOTZmNmY1LWY3YTUtNDRiMS1iNDE3LWQ5MDFkZDA4MGEyNCIsIndhbGxldCI6IjB4OGZkMzc5MjQ2ODM0ZWFjNzRCODQxOUZmZEEyMDJDRjgwNTFGN0EwMyJ9.lkmXgxWFxxz9a6Ycbb-9YPdUiezw4gKPJ_-U96SDar0
+@withdraw_id = d87baee0-0707-4371-9732-64862931d99b
+
+### Withdraw - REST Client requests
+
+### Create withdrawal (authenticated)
+POST {{base}}/api/v1/withdrawals
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "token_symbol": "USDT",
+  "amount": "100.0"
+}
+
+### Example response (201 Created)
+# HTTP/1.1 201 Created
+# {
+#   "id": "<uuid>",
+#   "user_id": "<user-id>",
+#   "token_symbol": "USDT",
+#   "amount": "100.0",
+#   "status": "pending",
+#   "created_at": "2026-02-13T...Z"
+# }
+
+### Get user withdrawals (authenticated, paginated)
+GET {{base}}/api/v1/withdrawals?limit=20&offset=0
+Authorization: Bearer {{token}}
+
+### Get a single withdrawal (authenticated)
+GET {{base}}/api/v1/withdrawals/{{withdraw_id}}
+Authorization: Bearer {{token}}
+
+### Cancel a withdrawal (authenticated)
+POST {{base}}/api/v1/withdrawals/{{withdraw_id}}/cancel
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+### Get withdrawal limits (authenticated)
+GET {{base}}/api/v1/withdrawals/limits
+Authorization: Bearer {{token}}
+
+### Negative / edge-case tests
+
+### Create withdrawal with zero amount (expect 400)
+POST {{base}}/api/v1/withdrawals
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "token_symbol": "USDT", "amount": "0" }
+
+### Create withdrawal without auth (expect 401)
+POST {{base}}/api/v1/withdrawals
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "token_symbol": "USDT", "amount": "10" }
+
+### Create withdrawal with missing token_symbol (expect 400)
+POST {{base}}/api/v1/withdrawals
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "amount": "10" }
+
+```
