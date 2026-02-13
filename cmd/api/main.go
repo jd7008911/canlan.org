@@ -13,11 +13,11 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
 	"github.com/redis/go-redis/v9"
-	"github.com/yourproject/canglanfu-api/internal/auth"
-	"github.com/yourproject/canglanfu-api/internal/config"
-	"github.com/yourproject/canglanfu-api/internal/db"
-	"github.com/yourproject/canglanfu-api/internal/handlers"
-	"github.com/yourproject/canglanfu-api/internal/services"
+	"jd7008911/canlan.org/internal/auth"
+	"jd7008911/canlan.org/internal/config"
+	"jd7008911/canlan.org/internal/db"
+	"jd7008911/canlan.org/internal/handlers"
+	"jd7008911/canlan.org/internal/services"
 )
 
 func main() {

@@ -7,7 +7,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/shopspring/decimal"
-	"github.com/yourproject/canglanfu-api/internal/db"
+	"jd7008911/canlan.org/internal/db"
 )
 
 // LPService handles all liquidity pool-related business logic.

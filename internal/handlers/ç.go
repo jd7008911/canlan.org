@@ -8,9 +8,9 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/google/uuid"
 	"github.com/shopspring/decimal"
-	"github.com/yourproject/canglanfu-api/internal/auth"
-	"github.com/yourproject/canglanfu-api/internal/services"
-	"github.com/yourproject/canglanfu-api/pkg/web"
+	"jd7008911/canlan.org/internal/auth"
+	"jd7008911/canlan.org/internal/services"
+	"jd7008911/canlan.org/pkg/web"
 )
 
 // PurchaseHandler handles token purchase/subscription HTTP requests.

@@ -8,8 +8,8 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/shopspring/decimal"
-	"github.com/yourproject/canglanfu-api/internal/config"
-	"github.com/yourproject/canglanfu-api/internal/db"
+	"jd7008911/canlan.org/internal/config"
+	"jd7008911/canlan.org/internal/db"
 )
 
 // BlockRewardService manages mint blocks, weight snapshots, and reward distribution.

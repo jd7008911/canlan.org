@@ -6,10 +6,10 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/google/uuid"
-	"github.com/yourproject/canglanfu-api/internal/auth"
-	"github.com/yourproject/canglanfu-api/internal/db"
-	"github.com/yourproject/canglanfu-api/internal/services"
-	"github.com/yourproject/canglanfu-api/pkg/web"
+	"jd7008911/canlan.org/internal/auth"
+	"jd7008911/canlan.org/internal/db"
+	"jd7008911/canlan.org/internal/services"
+	"jd7008911/canlan.org/pkg/web"
 )
 
 type AuthHandler struct {

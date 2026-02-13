@@ -6,7 +6,7 @@ import (
 	"encoding/hex"
 
 	"github.com/google/uuid"
-	"github.com/yourproject/canglanfu-api/internal/db"
+	"jd7008911/canlan.org/internal/db"
 )
 
 type ReferralService struct {

@@ -1,4 +1,4 @@
-module github.com/yourproject/canglanfu-api
+module jd7008911/canlan.org
 
 go 1.21
 
