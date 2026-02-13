@@ -1,0 +1,43 @@
+@base = http://localhost:8080
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzEwNTYzNjQsImlhdCI6MTc3MDk2OTk2NCwidXNlcl9pZCI6ImFkOTZmNmY1LWY3YTUtNDRiMS1iNDE3LWQ5MDFkZDA4MGEyNCIsIndhbGxldCI6IjB4OGZkMzc5MjQ2ODM0ZWFjNzRCODQxOUZmZEEyMDJDRjgwNTFGN0EwMyJ9.lkmXgxWFxxz9a6Ycbb-9YPdUiezw4gKPJ_-U96SDar0
+@symbol = CGL
+@limit = 10
+
+### Assets - REST Client requests
+
+### Get portfolio (requires Bearer token)
+GET {{base}}/api/v1/assets/portfolio
+Authorization: Bearer {{token}}
+
+### Get token balance (requires Bearer token)
+GET {{base}}/api/v1/assets/balance/{{symbol}}
+Authorization: Bearer {{token}}
+
+### List tokens (public)
+GET {{base}}/api/v1/assets/tokens
+
+### Get token price (public)
+GET {{base}}/api/v1/assets/tokens/{{symbol}}/price
+
+### Top holders (public, optional ?limit=)
+GET {{base}}/api/v1/assets/tokens/{{symbol}}/holders?limit={{limit}}
+
+### Network stats (public)
+GET {{base}}/api/v1/assets/stats/network
+
+### Curl examples
+
+# Get portfolio (curl)
+# curl -H "Authorization: Bearer <TOKEN>" {{base}}/api/v1/assets/portfolio
+
+# Get balance (curl)
+# curl -H "Authorization: Bearer <TOKEN>" {{base}}/api/v1/assets/balance/{{symbol}}
+
+# List tokens
+# curl {{base}}/api/v1/assets/tokens
+
+# Token price
+# curl {{base}}/api/v1/assets/tokens/{{symbol}}/price
+
+# Top holders with limit
+# curl "{{base}}/api/v1/assets/tokens/{{symbol}}/holders?limit=5"

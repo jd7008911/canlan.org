@@ -1,0 +1,8 @@
+{
+  "name": "canglanfu-api-dev-sign",
+  "version": "1.0.0",
+  "description": "helper for signing nonces",
+  "dependencies": {
+    "ethers": "^6.0.0"
+  }
+}

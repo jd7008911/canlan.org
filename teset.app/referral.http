@@ -1,0 +1,46 @@
+@base = http://localhost:8080
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzEwNTYzNjQsImlhdCI6MTc3MDk2OTk2NCwidXNlcl9pZCI6ImFkOTZmNmY1LWY3YTUtNDRiMS1iNDE3LWQ5MDFkZDA4MGEyNCIsIndhbGxldCI6IjB4OGZkMzc5MjQ2ODM0ZWFjNzRCODQxOUZmZEEyMDJDRjgwNTFGN0EwMyJ9.lkmXgxWFxxz9a6Ycbb-9YPdUiezw4gKPJ_-U96SDar0
+@limit = 20
+@offset = 0
+
+### Referral - REST Client requests (authenticated)
+
+### Get referral code
+GET {{base}}/api/v1/referral/code
+Authorization: Bearer {{token}}
+
+### Generate new referral code
+POST {{base}}/api/v1/referral/generate
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{}
+
+### Get referral earnings
+GET {{base}}/api/v1/referral/earnings
+Authorization: Bearer {{token}}
+
+### Get referral stats
+GET {{base}}/api/v1/referral/stats
+Authorization: Bearer {{token}}
+
+### Get referral history (paginated)
+GET {{base}}/api/v1/referral/history?limit={{limit}}&offset={{offset}}
+Authorization: Bearer {{token}}
+
+### Curl examples
+
+# Get referral code
+# curl -H "Authorization: Bearer <TOKEN>" {{base}}/api/v1/referral/code
+
+# Generate new code
+# curl -X POST -H "Authorization: Bearer <TOKEN>" -H "Content-Type: application/json" {{base}}/api/v1/referral/generate -d '{}'
+
+# Get earnings
+# curl -H "Authorization: Bearer <TOKEN>" {{base}}/api/v1/referral/earnings
+
+# Get stats
+# curl -H "Authorization: Bearer <TOKEN>" {{base}}/api/v1/referral/stats
+
+# Get history
+# curl -H "Authorization: Bearer <TOKEN>" "{{base}}/api/v1/referral/history?limit=10&offset=0"
